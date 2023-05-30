@@ -72,7 +72,7 @@
             android:layout_below="@id/list_deposit_kelas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="You booked a gym session on:"
+            android:text="Gym session you've booked on:"
             />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_gym_session"
@@ -91,7 +91,7 @@
             android:layout_below="@id/list_gym_session"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="You booked a gym class on:"
+            android:text="Gym class you've booked so far:"
             />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_gym_class"

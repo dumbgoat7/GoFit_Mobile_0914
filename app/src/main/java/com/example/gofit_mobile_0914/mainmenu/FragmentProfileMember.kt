@@ -62,6 +62,7 @@ class FragmentProfileMember : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         sharedPref = this.getActivity()?.getSharedPreferences("data_member", Context.MODE_PRIVATE)
         val id = sharedPref!!.getString("id_member", "")
+        val idText : TextView = view.findViewById(R.id.member_id)
         val name : TextView = view.findViewById(R.id.member_name)
         val email : TextView = view.findViewById(R.id.member_email)
         val phone : TextView = view.findViewById(R.id.phone)
@@ -69,6 +70,7 @@ class FragmentProfileMember : Fragment() {
         val activeUntil : TextView = view.findViewById(R.id.activeUntil)
         val activedeposit : TextView = view.findViewById(R.id.activeDepositKls)
 
+        idText.setText(id)
         name.setText(sharedPref!!.getString("nama_member", ""))
         email.setText(sharedPref!!.getString("email", ""))
         phone.setText(sharedPref!!.getString("no_telp", ""))

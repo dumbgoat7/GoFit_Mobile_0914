@@ -63,10 +63,18 @@ class FragmentMainMenu : Fragment(R.layout.fragment_mainmenu) {
                 val intent = Intent(requireContext(), LoginActivity::class.java)
                 startActivity(intent)
             } else {
-                val transaction = activity?.supportFragmentManager?.beginTransaction()
-                transaction!!.replace(R.id.layout_fragment, FragmentProfileMember())
-                transaction.addToBackStack(null)
-                transaction.commit()
+                if(sharedPref!!.getString("LoginAs","") == "Member") {
+                    val transaction = activity?.supportFragmentManager?.beginTransaction()
+                    transaction!!.replace(R.id.layout_fragment, FragmentProfileMember())
+                    transaction.addToBackStack(null)
+                    transaction.commit()
+                } else if (sharedPref!!.getString("LoginAs","") == "Instructur") {
+                    val transaction = activity?.supportFragmentManager?.beginTransaction()
+                    transaction!!.replace(R.id.layout_fragment, FragmentProfileInstruktur())
+                    transaction.addToBackStack(null)
+                    transaction.commit()
+                }
+
                 println("sudah login")
             }
         }

@@ -15,7 +15,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/logoutprofile"
+                android:id="@+id/logoutprofileins"
                 android:layout_gravity="end"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -24,7 +24,8 @@
                 android:src="@drawable/ic_logout_24" />
 
             <TextView
-                android:id="@+id/member_name"
+                android:id="@+id/ins_name"
+                android:layout_marginTop="5dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -33,30 +34,20 @@
                 android:textStyle="bold"
                 android:textSize="21sp"/>
             <ImageView
-                android:layout_marginTop="18dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginTop="25dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:src="@drawable/circleprofile"/>
-            <TextView
-                android:id="@+id/member_id"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Wiliam Snoe"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:textSize="21sp"/>
 
         </LinearLayout>
         <androidx.cardview.widget.CardView
             android:layout_width="300dp"
-            android:layout_height="100dp"
+            android:layout_height="120dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="290dp">
+            android:layout_marginTop="275dp">
             <LinearLayout
                 android:gravity="center_horizontal"
                 android:layout_width="match_parent"
@@ -105,7 +96,7 @@
                 android:layout_height="36dp"
                 android:src="@drawable/email"/>
             <TextView
-                android:id="@+id/member_email"
+                android:id="@+id/ins_email"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
@@ -124,7 +115,7 @@
                 android:layout_height="36dp"
                 android:src="@drawable/phonebook"/>
             <TextView
-                android:id="@+id/phone"
+                android:id="@+id/ins_phone"
                 android:textStyle="bold"
                 android:layout_gravity="center_vertical"
                 android:layout_width="wrap_content"
@@ -132,84 +123,7 @@
                 android:paddingLeft="20dp"
                 android:text="+266 225 225"/>
         </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            android:paddingLeft="25dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:src="@drawable/deposit"/>
-            <TextView
-                android:id="@+id/deposittext"
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:text="Deposit: Rp. "/>
-            <TextView
-                android:id="@+id/deposit"
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Add to group"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            android:paddingLeft="25dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:src="@drawable/calendar"/>
-            <TextView
-                android:id="@+id/activeUntiltext"
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:text="Active until: "/>
-            <TextView
-                android:id="@+id/activeUntil"
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="active until"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="25dp"
-            android:orientation="horizontal"
-            android:paddingLeft="25dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:src="@drawable/gym"/>
-            <TextView
-                android:id="@+id/activeDepositKlstext"
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingLeft="20dp"
-                android:text="Your active class deposit: "/>
-            <TextView
-                android:id="@+id/activeDepositKls"
-                android:textStyle="bold"
-                android:layout_gravity="center_vertical"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="active until"/>
-        </LinearLayout>
+
     </LinearLayout>
 
 </LinearLayout>
