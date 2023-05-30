@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".mainmenu.FragmentBookingGym">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Booking Gym"
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/ic_return"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Other views or content of the LinearLayout -->
+
+    <TextView
+        android:id="@+id/judul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:text="Gym Session List"
+        android:textStyle="bold"
+        android:textSize="20sp" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/sessionCard"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_below="@+id/headlineCard"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="20dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_session"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            tools:listitem="@layout/rv_session">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </androidx.cardview.widget.CardView>
+    <Button
+        android:id="@+id/addbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/sessionCard"
+        android:layout_gravity="center|top"
+        android:text="Book a Session" />
+
+</LinearLayout>

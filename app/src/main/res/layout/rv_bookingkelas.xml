@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        >
+
+
+        <TextView
+            android:id="@+id/tvnamaKelas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="nama Kelas"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTextTanggalBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Booking date :"
+            app:layout_constraintStart_toStartOf="@+id/tvnamaKelas"
+            app:layout_constraintTop_toBottomOf="@+id/tvnamaKelas" />
+
+        <TextView
+            android:id="@+id/tvTanggalBookingkls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTextTanggalBooking"
+            app:layout_constraintStart_toEndOf="@+id/tvTextTanggalBooking"
+            app:layout_constraintTop_toTopOf="@+id/tvTextTanggalBooking" />
+
+        <TextView
+            android:id="@+id/tvTextjamMulai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Start time :"
+            app:layout_constraintStart_toStartOf="@+id/tvnamaKelas"
+            app:layout_constraintTop_toBottomOf="@+id/tvTextTanggalBooking" />
+
+        <TextView
+            android:id="@+id/tvjamMulai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTextjamMulai"
+            app:layout_constraintStart_toEndOf="@+id/tvTextjamMulai"
+            app:layout_constraintTop_toTopOf="@+id/tvTextjamMulai" />
+
+
+        <TextView
+            android:id="@+id/tvstatusbooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="3dp"
+            android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.098"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

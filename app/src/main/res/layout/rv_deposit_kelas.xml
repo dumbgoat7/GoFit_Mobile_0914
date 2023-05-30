@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="2dp"
+
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp">
+
+
+        <TextView
+            android:id="@+id/tvnoStrukkls"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvtanggal_transaksi"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/tvnoStrukkls"
+            app:layout_constraintTop_toBottomOf="@+id/tvnoStrukkls" />
+
+        <TextView
+            android:id="@+id/tvkelas"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toStartOf="@+id/tvnoStrukkls"
+            app:layout_constraintTop_toBottomOf="@+id/tvtanggal_transaksi" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:text="Deposit :"
+            app:layout_constraintStart_toEndOf="@id/tvtanggal_transaksi"
+            app:layout_constraintTop_toBottomOf="@+id/tvnoStrukkls" />
+
+
+        <TextView
+            android:id="@+id/tvdepositkls"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            app:layout_constraintStart_toEndOf="@id/tv"
+            app:layout_constraintTop_toBottomOf="@+id/tvnoStrukkls" />
+
+        <TextView
+            android:id="@+id/tv2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Usage amount :"
+            app:layout_constraintStart_toEndOf="@id/tvkelas"
+            app:layout_constraintTop_toBottomOf="@+id/tv" />
+
+        <TextView
+            android:id="@+id/tvdeposit"
+            android:layout_width="20dp"
+            android:layout_height="wrap_content"
+            android:text="6"
+            app:layout_constraintStart_toEndOf="@id/tv2"
+            app:layout_constraintTop_toBottomOf="@+id/tv" />
+        <TextView
+            android:id="@+id/tvkali"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="times"
+            app:layout_constraintStart_toEndOf="@id/tvdeposit"
+            app:layout_constraintTop_toBottomOf="@+id/tv" />
+
+        <TextView
+            android:id="@+id/tv3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Valid until :"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvmasaberlaku"
+            app:layout_constraintStart_toEndOf="@+id/tvkelas"
+            app:layout_constraintTop_toBottomOf="@id/tv2" />
+
+        <TextView
+            android:id="@+id/tvmasaberlaku"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:text="Text View"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
