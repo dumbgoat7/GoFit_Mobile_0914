@@ -45,12 +45,15 @@ class FragmentBookingGym : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sharedPref = this.getActivity()?.getSharedPreferences("login", Context.MODE_PRIVATE)
-        val id = sharedPref!!.getString("id_member", "")
         val isLogin = sharedPref!!.getBoolean("isLogin", false)
-        val Token = sharedPref!!.getString("token", "")
+        val loginAs = sharedPref!!.getString("LoginAs","")
+        val token = sharedPref!!.getString("access_token", "")
+
         println("wue")
-        print(Token)
-        println(id)
+        println(token)
+        println(loginAs)
+        sharedPref = this.getActivity()?.getSharedPreferences("data_member", Context.MODE_PRIVATE)
+        val id = sharedPref!!.getString("id_member", "")
         recyclerView = view.findViewById(R.id.list_session)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         dataList = mutableListOf()
@@ -58,13 +61,13 @@ class FragmentBookingGym : Fragment() {
         recyclerView.adapter = adapter
 
         queue = Volley.newRequestQueue(requireContext())
-        fetchData(Token!!)
+        fetchData(token!!)
 
         val addbtn : Button = view.findViewById(R.id.addbtn)
 
         addbtn.setOnClickListener {
             if (isLogin) {
-                showFormDialog(id!!, Token)
+                showFormDialog(id!!, token)
             } else {
                 Toast.makeText(requireContext(), "Please Login First", Toast.LENGTH_SHORT).show()
                 val intent = Intent ( requireContext(), LoginActivity::class.java)
@@ -124,7 +127,7 @@ class FragmentBookingGym : Fragment() {
             else if(enteredDate == "") {
                 Toast.makeText(context, "Please select a date", Toast.LENGTH_SHORT).show()
             }else {
-                bookingGym(id, selectedId!!, enteredDate, Token)
+                bookingGym(id, selectedId, enteredDate, Token)
 
                 dialog.dismiss()
             }
@@ -138,7 +141,7 @@ class FragmentBookingGym : Fragment() {
     private fun bookingGym(id: String, selectedId: String, date: String, Token: String) {
         val url =ApiUrl.booking // Replace with your actual API endpoint
 
-        val requestQueue = Volley.newRequestQueue(requireContext())
+//        val requestQueue = Volley.newRequestQueue(requireContext())
         val stringRequest = object : StringRequest(
             Method.POST, url,
             Response.Listener { response ->
@@ -149,10 +152,12 @@ class FragmentBookingGym : Fragment() {
             },
             Response.ErrorListener { error ->
                 // Handle API error here
+                println("test")
                 // You can display an error message or perform other error handling
                 if (error.networkResponse != null) {
                     val errorMessage = String(error.networkResponse.data, StandardCharsets.UTF_8)
                     val errors = JSONObject(errorMessage)
+                    println(errors.getString("message"))
                     Toast.makeText(context, errors.getString("message"), Toast.LENGTH_SHORT).show()
                 }
             }
@@ -174,7 +179,7 @@ class FragmentBookingGym : Fragment() {
             }
         }
 
-        requestQueue.add(stringRequest)
+        queue.add(stringRequest)
     }
 
 

@@ -119,7 +119,13 @@ class FragmentMainMenu : Fragment(R.layout.fragment_mainmenu) {
                     val dataObject: JSONObject = jsonArray.getJSONObject(i)
                     val id = dataObject.getInt("id")
                     val tanggal = dataObject.getString("tanggal")
-                    val status = dataObject.getString("status")
+                    val check = dataObject.getString("status")
+                    var status : String? = null
+                    if(check != null) {
+                        status = check
+                    } else {
+                        status = ""
+                    }
                     val sesiJadwal = dataObject.getInt("sesi_jadwal")
                     val hari = dataObject.getString("hari")
                     val jam = dataObject.getString("jam_mulai")

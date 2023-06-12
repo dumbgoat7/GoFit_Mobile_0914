@@ -25,7 +25,7 @@ class HomeMOActivity : AppCompatActivity() {
 
         setCurrentFragment(fragmentMainMenu)
 //
-        val bottom_nav : BottomNavigationView = findViewById(R.id.bottom_navigation)
+        val bottom_nav : BottomNavigationView = findViewById(R.id.bottom_navigationMO)
 //
         bottom_nav.setOnItemSelectedListener { item ->
             when(item.itemId){

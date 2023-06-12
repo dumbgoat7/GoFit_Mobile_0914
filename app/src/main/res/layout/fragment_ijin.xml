@@ -1,87 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:context=".mainmenu.IjinFragment">
+    android:layout_height="match_parent"
+    tools:context=".mainmenu.IjinFragment"
+    android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="16dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tanggal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Request Created on"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            />
-
-        <TextView
-            android:id="@+id/tanggalTV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="2023-02-02"
-            app:layout_constraintStart_toEndOf="@id/tanggal"
-            app:layout_constraintTop_toTopOf="@id/tanggal"
-            android:layout_marginStart="16dp"/>
-
-        <TextView
-            android:id="@+id/sesi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Absence on"
-            app:layout_constraintStart_toStartOf="@id/tanggal"
-            app:layout_constraintTop_toBottomOf="@id/tanggalTV" />
-
-        <TextView
-            android:id="@+id/sesiTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:text="1"
-            app:layout_constraintStart_toStartOf="@id/tanggalTV"
-            app:layout_constraintTop_toTopOf="@id/sesi"/>
-
-        <Button
-            android:id="@+id/btnIzinKelas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Izin"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/instrukturPenggantiTv"
-            android:layout_marginTop="32dp" />
-
-        <EditText
-            android:id="@+id/instrukturPenggantiTv"
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:minHeight="48dp"
-            android:hint="Masukkan Nama Instruktur Pengganti"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sesiTv"
-            android:autofillHints="username"
-            android:inputType="text" />
+            android:layout_height="?attr/actionBarSize"
+            app:title="Absence Permission"
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/ic_return"/>
 
+    </com.google.android.material.appbar.AppBarLayout>
 
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:layout_gravity="center"
-            tools:visibility="visible"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/judul1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:text="Your Recent Absence Permission"
+        android:textStyle="bold"
+        android:textSize="20sp" />
 
-</androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ijinCard2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:id="@+id/alert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You never make an absence request yet !"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ijinCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="500dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="20dp">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_ijin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        tools:listitem="@layout/rv_ijin">
+
+    </androidx.recyclerview.widget.RecyclerView>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/ijinbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center|top"
+        android:text="Make an absence request" />
+
+</LinearLayout>

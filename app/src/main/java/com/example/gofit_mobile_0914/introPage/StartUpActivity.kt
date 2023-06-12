@@ -12,6 +12,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.gofit_mobile_0914.R
 import com.example.gofit_mobile_0914.mainmenu.HomeActivity
+import com.example.gofit_mobile_0914.mainmenu.HomeInstructurActivity
+import com.example.gofit_mobile_0914.mainmenu.HomeMOActivity
 
 class StartUpActivity : AppCompatActivity() {
     private lateinit var logo : ImageView
@@ -48,7 +50,6 @@ class StartUpActivity : AppCompatActivity() {
                 .putBoolean("first_time", false)
                 .apply()
 
-            sharedPreferences = getSharedPreferences("login", Context.MODE_PRIVATE)
             val editor = sharedPreferences.edit()
             editor.putString("LoginAs","Guest")
             editor.putBoolean("isLogin",false)
@@ -61,9 +62,24 @@ class StartUpActivity : AppCompatActivity() {
             }, 3000)
         }
         else {
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
-            finish()
+            val loginAs = sharedPreferences.getString("LoginAs","")
+            when (loginAs) {
+                "Instructur" -> {
+                    val intent = Intent(this, HomeInstructurActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                "MO" -> {
+                    val intent = Intent(this, HomeMOActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                else -> {
+                    val intent = Intent(this, HomeActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
         }
 
     }

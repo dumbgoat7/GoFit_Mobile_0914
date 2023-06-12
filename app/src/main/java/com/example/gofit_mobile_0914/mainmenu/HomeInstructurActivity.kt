@@ -26,7 +26,7 @@ class HomeInstructurActivity : AppCompatActivity() {
 
         setCurrentFragment(fragmentMainMenu)
 //
-        val bottom_nav : BottomNavigationView = findViewById(R.id.bottom_navigation)
+        val bottom_nav : BottomNavigationView = findViewById(R.id.bottom_navigationIns)
 //
         bottom_nav.setOnItemSelectedListener { item ->
             when(item.itemId){
@@ -39,8 +39,7 @@ class HomeInstructurActivity : AppCompatActivity() {
                     true
                 }
                 R.id.ic_request-> {
-//                    val intent = Intent(this, QRActivity::class.java)
-//                    startActivity(intent)
+                    setCurrentFragment(IjinFragment())
                     true
                 }
                 else -> false

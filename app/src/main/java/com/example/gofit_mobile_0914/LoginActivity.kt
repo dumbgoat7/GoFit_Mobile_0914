@@ -19,6 +19,7 @@ import com.example.gofit_mobile_0914.mainmenu.HomeInstructurActivity
 import com.example.gofit_mobile_0914.mainmenu.HomeMOActivity
 import com.google.android.material.textfield.TextInputLayout
 import com.google.gson.Gson
+import org.json.JSONException
 import org.json.JSONObject
 //import retrofit2.Call
 //import retrofit2.Callback
@@ -55,7 +56,6 @@ class LoginActivity : AppCompatActivity() {
         ResetPasswordTxt.setOnClickListener(View.OnClickListener {
             val userType = loginAs.selectedItem.toString()
             val username: String = inputUsername.getEditText()?.getText().toString()
-            val password: String = inputPassword.getEditText()?.getText().toString()
 
             when (userType) {
                 "Manager Operational" -> resetPasswordMO(username)
@@ -128,7 +128,7 @@ class LoginActivity : AppCompatActivity() {
         val userType = loginAs.selectedItem.toString()
         val username: String = inputUsername.getEditText()?.getText().toString()
         val password: String = inputPassword.getEditText()?.getText().toString()
-
+        println(username)
         when (userType) {
             "Manager Operational" -> loginAsMO(username,password)
             "Instructur" -> loginAsInstruktur(username,password)
@@ -164,8 +164,25 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this@LoginActivity, "Login successful for User Type 1", Toast.LENGTH_SHORT).show()
             },
             Response.ErrorListener { error ->
-                // Handle error case
-                Toast.makeText(this@LoginActivity, "Login failed for User Type 1", Toast.LENGTH_SHORT).show()
+                val errorResponse = error.networkResponse?.data
+                if (errorResponse != null) {
+                    val errorString = String(errorResponse)
+                    try {
+                        val errorObject = JSONObject(errorString)
+                        val errorMessage = errorObject.getString("message")
+                        Toast.makeText(this@LoginActivity, errorMessage, Toast.LENGTH_SHORT).show()
+                    } catch (e: JSONException) {
+                        e.printStackTrace()
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "Error: An error occurred",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+                else {
+                    Toast.makeText(this@LoginActivity, "Error: An error occurred", Toast.LENGTH_SHORT).show()
+                }
             }) {
 
             override fun getParams(): MutableMap<String, String> {
@@ -181,11 +198,12 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun loginAsInstruktur(username: String, password: String) {
-
+        println("wue")
         val stringRequest = object : StringRequest(
             Method.POST,
             ApiUrl.loginInstruktur,
             Response.Listener { response ->
+                println("wue2")
                 // Handle successful login response
                 val jsonResponse = JSONObject(response)
                 val user = jsonResponse.getString("user")
@@ -200,17 +218,34 @@ class LoginActivity : AppCompatActivity() {
                 editor?.putString("email_instruktur", data.getString("email_instruktur"))
                 editor?.putString("tanggal_lahir", data.getString("tanggal_lahir"))
                 editor?.commit()
-
+                println("wue3")
                 val accessToken = jsonResponse.getString("access_token")
+                println(accessToken)
                 saveAccessToken(accessToken, "Instructur")
                 startActivity(Intent(this@LoginActivity, HomeInstructurActivity::class.java))
                 Toast.makeText(this@LoginActivity, "Login successful for User Type 2", Toast.LENGTH_SHORT).show()
             },
             Response.ErrorListener { error ->
-                // Handle error case
-                Toast.makeText(this@LoginActivity, "Login failed for User Type 2", Toast.LENGTH_SHORT).show()
+                val errorResponse = error.networkResponse?.data
+                if (errorResponse != null) {
+                    val errorString = String(errorResponse)
+                    try {
+                        val errorObject = JSONObject(errorString)
+                        val errorMessage = errorObject.getString("message")
+                        Toast.makeText(this@LoginActivity, errorMessage, Toast.LENGTH_SHORT).show()
+                    } catch (e: JSONException) {
+                        e.printStackTrace()
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "Error: An error occurred",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+                else {
+                    Toast.makeText(this@LoginActivity, "Error: An error occurred", Toast.LENGTH_SHORT).show()
+                }
             }) {
-
             override fun getParams(): MutableMap<String, String> {
                 val params = HashMap<String, String>()
                 params["username"] = username
@@ -254,8 +289,25 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this@LoginActivity, "Login successful for User Type 3", Toast.LENGTH_SHORT).show()
             },
             Response.ErrorListener { error ->
-                // Handle error case
-                Toast.makeText(this@LoginActivity, "Login failed for User Type 3", Toast.LENGTH_SHORT).show()
+                val errorResponse = error.networkResponse?.data
+                if (errorResponse != null) {
+                    val errorString = String(errorResponse)
+                    try {
+                        val errorObject = JSONObject(errorString)
+                        val errorMessage = errorObject.getString("message")
+                        Toast.makeText(this@LoginActivity, errorMessage, Toast.LENGTH_SHORT).show()
+                    } catch (e: JSONException) {
+                        e.printStackTrace()
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "Error: An error occurred",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                }
+                else {
+                    Toast.makeText(this@LoginActivity, "Error: An error occurred", Toast.LENGTH_SHORT).show()
+                }
             }) {
 
             override fun getParams(): MutableMap<String, String> {
