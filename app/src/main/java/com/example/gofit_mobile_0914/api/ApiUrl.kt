@@ -2,7 +2,7 @@ package com.example.gofit_mobile_0914.api
 
 class ApiUrl {
     companion object{
-        val  BASE_URl = "http://192.168.1.4:8080/P3L/GoFit_0914/public/api"
+        val  BASE_URl = "https://backend-raka.danielriq221.com/GoFit_0914/public/api"
 
         val LoginPegawai = BASE_URl+"/loginMO"
         val loginInstruktur = BASE_URl+"/loginInstruktur"

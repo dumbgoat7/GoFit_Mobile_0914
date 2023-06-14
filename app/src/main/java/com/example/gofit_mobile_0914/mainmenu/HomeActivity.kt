@@ -2,11 +2,13 @@ package com.example.gofit_mobile_0914.mainmenu
 
 import FragmentBookingGym
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.example.gofit_mobile_0914.LoginActivity
 import com.example.gofit_mobile_0914.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
@@ -41,7 +43,14 @@ class HomeActivity : AppCompatActivity() {
                     true
                 }
                 R.id.ic_booking-> {
-                    setCurrentFragment(fragmentBookingGym)
+                    if(LoginAs == "Guest") {
+                        val intent = Intent(this, LoginActivity::class.java)
+                        startActivity(intent)
+                        finish()
+                    } else {
+                        setCurrentFragment(fragmentBookingGym)
+                        true
+                    }
                     true
                 }
                 else -> false

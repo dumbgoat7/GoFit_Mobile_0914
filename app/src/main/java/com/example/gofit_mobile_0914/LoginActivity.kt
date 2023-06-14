@@ -161,7 +161,7 @@ class LoginActivity : AppCompatActivity() {
                 val accessToken = jsonResponse.getString("access_token")
                 saveAccessToken(accessToken, "MO")
                 startActivity(Intent(this@LoginActivity, HomeMOActivity::class.java))
-                Toast.makeText(this@LoginActivity, "Login successful for User Type 1", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "Login successfully as MO", Toast.LENGTH_SHORT).show()
             },
             Response.ErrorListener { error ->
                 val errorResponse = error.networkResponse?.data
@@ -223,7 +223,7 @@ class LoginActivity : AppCompatActivity() {
                 println(accessToken)
                 saveAccessToken(accessToken, "Instructur")
                 startActivity(Intent(this@LoginActivity, HomeInstructurActivity::class.java))
-                Toast.makeText(this@LoginActivity, "Login successful for User Type 2", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "Login successfully as Instructur", Toast.LENGTH_SHORT).show()
             },
             Response.ErrorListener { error ->
                 val errorResponse = error.networkResponse?.data
@@ -286,7 +286,7 @@ class LoginActivity : AppCompatActivity() {
                 dataMember?.commit()
 
                 startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
-                Toast.makeText(this@LoginActivity, "Login successful for User Type 3", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@LoginActivity, "Login successfully as Member", Toast.LENGTH_SHORT).show()
             },
             Response.ErrorListener { error ->
                 val errorResponse = error.networkResponse?.data
