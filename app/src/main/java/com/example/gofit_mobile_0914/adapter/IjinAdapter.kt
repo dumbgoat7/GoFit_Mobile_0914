@@ -19,7 +19,7 @@ class IjinAdapter (private val ijinList: MutableList<Ijin>) :
             private val statusTextView : TextView = itemView.findViewById(R.id.statusIjinTv)
 
         fun bind(ijin: Ijin) {
-            tanggalTextView.text = ijin.tanggalIjin
+            tanggalTextView.text = ijin.tanggal
             tanggalIjinTextView.text = ijin.tanggalIjin
             substituteTextView.text = ijin.pengganti
             keteranganTextView.text = ijin.keterangan

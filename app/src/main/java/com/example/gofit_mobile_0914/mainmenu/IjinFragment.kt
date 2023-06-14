@@ -110,6 +110,7 @@ class IjinFragment : Fragment() {
                             }
                             val data = Ijin (
                                 dataObject.getInt("id"),
+                                dataObject.getString("tanggal_pembuatan_ijin"),
                                 dataObject.getString("tanggal_ijin"),
                                 dataObject.getString("nama_instruktur_pengganti"),
                                 dataObject.getString("keterangan"),
