@@ -21,6 +21,7 @@ import com.example.gofit_mobile_0914.R
 import com.example.gofit_mobile_0914.adapter.DetailsBookingAdapter
 import com.example.gofit_mobile_0914.api.ApiUrl
 import com.example.gofit_mobile_0914.models.DetailsBookingGym
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.textfield.TextInputEditText
 import org.json.JSONArray
 import org.json.JSONException
@@ -73,6 +74,11 @@ class FragmentBookingGym : Fragment() {
                 val intent = Intent ( requireContext(), LoginActivity::class.java)
                 startActivity(intent)
             }
+        }
+
+        val toolbar: MaterialToolbar = view.findViewById(R.id.toolbar)
+        toolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressed()
         }
 
     }

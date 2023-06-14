@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_judulActivityIns"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:textStyle="bold"
+            android:text="Your attendance records so far:"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_presensi_instruktur"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_judulActivityIns"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            tools:listitem="@layout/rv_presensi_instruktur"/>
+
+        <TextView
+            android:id="@+id/tv_judulActivityIns2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/list_presensi_instruktur"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold"
+            android:text="Your absence request so far:"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_ijin_instruktur"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_judulActivityIns2"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+            tools:listitem="@layout/rv_ijin"/>
+    </RelativeLayout>
+</ScrollView>

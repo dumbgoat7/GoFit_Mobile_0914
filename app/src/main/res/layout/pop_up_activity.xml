@@ -11,7 +11,7 @@
         <TextView
             android:id="@+id/tv_judul"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,7 +29,7 @@
         <TextView
             android:id="@+id/tv_judul2"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:textStyle="bold"
             android:layout_below="@id/list_activate"
             android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
         <TextView
             android:id="@+id/tv_judul3"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:textStyle="bold"
             android:layout_below="@id/list_deposit"
             android:layout_width="wrap_content"
@@ -67,12 +67,12 @@
         <TextView
             android:id="@+id/tv_judul4"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:textStyle="bold"
             android:layout_below="@id/list_deposit_kelas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Gym session you've booked on:"
+            android:text="Gym session you've booked so far:"
             />
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/list_gym_session"
@@ -86,7 +86,7 @@
         <TextView
             android:id="@+id/tv_judul5"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="15dp"
             android:textStyle="bold"
             android:layout_below="@id/list_gym_session"
             android:layout_width="wrap_content"
@@ -100,6 +100,7 @@
             android:layout_below="@id/tv_judul5"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
             tools:listitem="@layout/rv_bookingkelas"/>
 
 

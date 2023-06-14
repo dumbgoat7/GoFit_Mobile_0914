@@ -19,7 +19,7 @@ class HomeMOActivity : AppCompatActivity() {
         val LoginAs = sharedPref.getString("LoginAs","")
         println(LoginAs)
 //        val fragmentProfile = FragmentProfile()
-//        val fragmentRs = FragmentRS()
+        val fragmentPresensi = PresensiInstrukturFragment()
         val fragmentMainMenu = FragmentMainMenu()
 //        val cameraActivity = CameraActivity()
 
@@ -33,10 +33,10 @@ class HomeMOActivity : AppCompatActivity() {
                     setCurrentFragment(fragmentMainMenu)
                     true
                 }
-//                R.id.ic_hospital-> {
-//                    setCurrentFragment(fragmentRs)
-//                    true
-//                }
+                R.id.ic_presensi-> {
+                    setCurrentFragment(fragmentPresensi)
+                    true
+                }
 //                R.id.ic_scan-> {
 //                    val intent = Intent(this, QRActivity::class.java)
 //                    startActivity(intent)

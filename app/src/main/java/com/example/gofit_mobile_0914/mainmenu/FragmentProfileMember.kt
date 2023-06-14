@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -83,7 +84,7 @@ class FragmentProfileMember : Fragment() {
         queue = Volley.newRequestQueue(requireContext())
 
         getActiveDepositKls(Token!!, activedeposit, id!!)
-        val btnactivity = view.findViewById<TextView>(R.id.btn_activity)
+        val btnactivity = view.findViewById<Button>(R.id.btn_activity)
         val btnlogout = view.findViewById<ImageView>(R.id.logoutprofile)
         btnactivity.setOnClickListener {
             showFormDialog(Token, id!!)
@@ -124,12 +125,11 @@ class FragmentProfileMember : Fragment() {
         val listGymSession = dialog.findViewById<RecyclerView>(R.id.list_gym_session)
         val listGymClass = dialog.findViewById<RecyclerView>(R.id.list_gym_class)
 
-        val judul = dialog.findViewById<TextView>(R.id.tv_judul)
         val judul2 = dialog.findViewById<TextView>(R.id.tv_judul2)
         val judul3 = dialog.findViewById<TextView>(R.id.tv_judul3)
         val judul4 = dialog.findViewById<TextView>(R.id.tv_judul4)
         val judul5 = dialog.findViewById<TextView>(R.id.tv_judul5)
-
+    println(judul2.text.toString())
 
         listActivate.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         listDeposit.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -158,8 +158,8 @@ class FragmentProfileMember : Fragment() {
         fetchActivation(Token, id)
         fetchDepositReguler(Token, listDeposit, judul2, id)
         fetchDepositKelas(Token, listDepositKelas, judul3, id)
-        fetchBookingKelas(Token, listGymClass,judul4, id)
-        fetchBookingGym(Token, listGymSession,judul5, id)
+        fetchBookingGym(Token, listGymSession,judul4, id)
+        fetchBookingKelas(Token, listGymClass,judul5, id)
 
         dialog.show()
     }
@@ -210,7 +210,7 @@ class FragmentProfileMember : Fragment() {
                 try {
                     val jsonResponse = JSONObject(response)
                     println("eiyo")
-                    if(jsonResponse.getString("data") == "null") {
+                    if(jsonResponse.getString("data") == "[]") {
                         listDeposit.visibility = View.GONE
                         judul2.setText("You have not made any deposit yet")
                     } else {
@@ -259,7 +259,7 @@ class FragmentProfileMember : Fragment() {
             { response ->
                 try {
                     val jsonResponse = JSONObject(response)
-                    if(jsonResponse.getString("data") == "null") {
+                    if(jsonResponse.getString("data") == "[]") {
                         listDepositKelas.visibility = View.GONE
                         judul3.setText("You have not made any class deposit yet")
                     } else {
@@ -307,9 +307,10 @@ class FragmentProfileMember : Fragment() {
             { response ->
                 try {
                     val jsonResponse = JSONObject(response)
-                    if(jsonResponse.getString("data") == "null") {
+                    println(jsonResponse.getString("data"))
+                    if(jsonResponse.getString("data") == "[]") {
                         listGymSession.visibility = View.GONE
-                        judul4.setText("You have not made any booking class yet")
+                        judul4.setText("You have not booked any gym session yet")
                     } else {
                         val jsonArray : JSONArray = jsonResponse.getJSONArray("data")
                         for(i in 0 until jsonArray.length()) {
@@ -347,7 +348,7 @@ class FragmentProfileMember : Fragment() {
             { response ->
                 try {
                     val jsonResponse = JSONObject(response)
-                    if(jsonResponse.getString("data") == "null") {
+                    if(jsonResponse.getString("data") == "[]") {
                         listGymClass.visibility = View.GONE
                         judul5.setText("You have not made any booking class yet")
                     } else {

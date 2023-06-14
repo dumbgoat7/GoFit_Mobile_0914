@@ -26,6 +26,7 @@ import com.example.gofit_mobile_0914.api.ApiUrl
 import com.example.gofit_mobile_0914.models.DetailsBookingGym
 import com.example.gofit_mobile_0914.models.Ijin
 import com.example.gofit_mobile_0914.models.Instructur
+import com.google.android.material.appbar.MaterialToolbar
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import org.json.JSONArray
@@ -77,7 +78,12 @@ class IjinFragment : Fragment() {
         val btnIjin : Button = view.findViewById(R.id.ijinbtn)
 
         btnIjin.setOnClickListener {
-            showFormDialog(id!!, token)
+            showFormDialog(id, token)
+        }
+
+        val toolbar: MaterialToolbar = view.findViewById(R.id.toolbar)
+        toolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressed()
         }
     }
 

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp">
+
+        <TextView
+            android:id="@+id/kelas"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:text="Class :"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/kelasTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="2023-02-02"
+            app:layout_constraintStart_toEndOf="@id/kelas"
+            app:layout_constraintTop_toTopOf="@id/kelas"
+            android:layout_marginStart="50dp"/>
+
+        <TextView
+            android:id="@+id/jamMulai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Start Time :"
+            app:layout_constraintStart_toStartOf="@id/kelas"
+            app:layout_constraintTop_toBottomOf="@id/kelasTV" />
+
+        <TextView
+            android:id="@+id/jamMulaiTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1"
+            app:layout_constraintStart_toStartOf="@id/kelasTV"
+            app:layout_constraintTop_toTopOf="@id/jamMulai"/>
+
+        <TextView
+            android:id="@+id/jamDatang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Arrival Time :"
+            app:layout_constraintStart_toStartOf="@id/jamMulai"
+            app:layout_constraintTop_toBottomOf="@id/jamMulaiTv" />
+
+        <TextView
+            android:id="@+id/jamDatangTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1"
+            app:layout_constraintStart_toStartOf="@id/kelasTV"
+            app:layout_constraintTop_toTopOf="@id/jamDatang"/>
+
+        <TextView
+            android:id="@+id/waktuTerlambat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Late Duration :"
+            app:layout_constraintStart_toStartOf="@id/kelas"
+            app:layout_constraintTop_toBottomOf="@id/jamDatangTv" />
+
+        <TextView
+            android:id="@+id/waktuTerlambatTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="1"
+            app:layout_constraintStart_toStartOf="@id/kelasTV"
+            app:layout_constraintTop_toTopOf="@id/waktuTerlambat"/>
+
+        <TextView
+            android:id="@+id/seconds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            tools:text="seconds"
+            app:layout_constraintStart_toEndOf="@id/waktuTerlambatTv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/waktuTerlambat"/>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

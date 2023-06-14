@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".mainmenu.PresensiInstrukturFragment"
+    android:orientation="vertical"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:title="Instructur Attendance"
+            app:titleTextColor="@color/white"
+            app:navigationIcon="@drawable/ic_return"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <TextView
+        android:id="@+id/judul1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:text="Today's Schedule"
+        android:textStyle="bold"
+        android:textSize="20sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/ijinCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="500dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="20dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:cardMaxElevation="12dp"
+        app:cardPreventCornerOverlap="true"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="20dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_schedule"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            tools:listitem="@layout/rv_schedule">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

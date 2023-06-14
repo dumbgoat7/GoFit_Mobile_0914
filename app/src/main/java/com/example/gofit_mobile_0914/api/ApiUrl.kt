@@ -14,7 +14,7 @@ class ApiUrl {
         val getdetailsBooking = BASE_URl + "/detailsBooking"
         val booking = BASE_URl + "/bookingGym"
         val getJadwalHarian = BASE_URl + "/jadwalHarianforall"
-
+        val showbyDay = BASE_URl + "/showbyDay/"
         val getActiveDeposit = BASE_URl + "/showActiveDepositKelasMember/"
 
         val getActivationMember = BASE_URl + "/showActivationMember/"
@@ -23,7 +23,9 @@ class ApiUrl {
         val getBookingKlsMember = BASE_URl + "/showBookingKelasMember/"
         val getBookingGymMember = BASE_URl + "/showBookingbyMember/"
 
-        val instruktur = BASE_URl + "/instrukturMobile"
+        val instruktur = BASE_URl + "/instrukturMobile/"
+        val getpresensiInstruktur = BASE_URl + "/presensiInstruktur/"
+        val presensiInstruktur = BASE_URl + "/presensiInstruktur"
         val ijinInstruktur = BASE_URl + "/ijinInstruktur"
         val showByInstruktur = BASE_URl + "/showByInstruktur/"
         val presensiKelas = BASE_URl + "/presensi/"
